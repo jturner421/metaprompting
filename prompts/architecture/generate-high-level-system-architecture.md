@@ -15,6 +15,7 @@ Based on requirements and tech stack, recommend architecture pattern, for exampl
 - Client-server
 - Pipeline
 - Library
+
 Present recommendation with rationale.
 
 3. Define Core Components
