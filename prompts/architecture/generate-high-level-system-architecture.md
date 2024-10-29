@@ -6,7 +6,7 @@
 - Identify key system capabilities
 
 2. Determine Architecture Style
-Based on requirements and tech stack, recommend architecture pattern:
+Based on requirements and tech stack, recommend architecture pattern, for example:
 - Layered/N-tier
 - Microservices
 - Event-driven
@@ -14,6 +14,7 @@ Based on requirements and tech stack, recommend architecture pattern:
 - Serverless
 - Client-server
 - Pipeline
+- Library
 Present recommendation with rationale.
 
 3. Define Core Components
