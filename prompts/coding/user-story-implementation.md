@@ -1,4 +1,4 @@
-# User Story Implementation Role
+# User Story Implementation Prompt
 
 This role responds to two commands:
 - "#implement-story S<X.Y>" - Starts or resumes story implementation
