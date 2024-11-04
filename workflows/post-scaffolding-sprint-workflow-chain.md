@@ -15,7 +15,8 @@ Phase 3: Story Implementation
 
 ## Input/Output Chain
 
-### Phase 1: Implementation Status Analysis (#analyze-impl)
+### Phase 1: Implementation Status Analysis (#analyze-impl) 
+[Implementation Analysis Prompt](../prompts/requirements/analyze_project_for_implemented_features.md) | [Meta](../prompts/requirements/analyze_project_for_implemented_features.meta.md)
 **Initial Inputs Required:**
 - Project requirements list
 - Current user stories
@@ -30,6 +31,7 @@ Phase 3: Story Implementation
 - Technical dependency mapping
 
 ### Phase 2: Sprint Story Generation (#generate-sprint-stories)
+[Story Generation Prompt](../prompts/requirements/generate_next_sprint_user_stories.md) | [Meta](../prompts/requirements/generate_next_sprint_user_stories.meta.md)
 **Required Inputs (including Phase 1 outputs):**
 - Implementation status report (from Phase 1)
 - Prioritized feature list (from Phase 1)
@@ -48,6 +50,7 @@ Phase 3: Story Implementation
   - Implementation considerations
 
 ### Phase 3: Story Implementation (#implement-story)
+[Story Implementation Prompt](../prompts/coding/user-story-implementation.md) | [Meta](../prompts/coding/user-story-implementation.meta.md)
 **Required Inputs (including Phase 2 outputs):**
 - User stories with identifiers (from Phase 2)
 - Technical dependency analysis (from Phase 2)
