@@ -1,20 +1,40 @@
 # Getting Started with Software Development Prompts
 
-This library contains a collection of carefully crafted prompts to support various software development workflows. Each prompt is designed to work directly with AI coding assistants.
+This library provides two complementary approaches to AI-assisted development:
+1. Individual prompts for specific tasks
+2. Workflow chains that connect multiple prompts in a systematic process
 
-## Using the Prompts
+## Using Individual Prompts
 
-1. Navigate to the relevant prompt category in the `/prompts` directory
-2. Share the raw URL of the prompt file with your AI assistant
-3. Ask the assistant to load and integrate the prompt
-4. Begin using the workflow by invoking the relevant prompt name
+1. Navigate to the relevant prompt category in `/prompts`:
+   - architecture/ - System design and tech stack
+   - coding/ - Implementation and development
+   - documentation/ - Docs and diagrams
+   - requirements/ - Project planning
+   - testing/ - Test generation and validation
 
-## Available Workflows
+2. Each prompt has two files:
+   - `[prompt-name].md` - AI instructions
+   - `[prompt-name].meta.md` - Usage documentation
+
+3. Share the prompt URL with your AI assistant and begin working
+
+## Using Workflow Chains
+
+1. Review available workflows in `/workflows`
+2. Choose a workflow that matches your development phase
+3. Follow the chain sequence:
+   - Verify required inputs
+   - Execute each phase
+   - Validate outputs
+   - Track progress with status commands
+
+## Available Features
 
 ### Project Initialization
 - Requirements generation and revision
-- Technology stack selection and BOM creation
-- Initial architecture design
+- Technology stack selection with BOM
+- Architecture design
 - Project scaffolding
 
 ### Development
@@ -27,18 +47,19 @@ This library contains a collection of carefully crafted prompts to support vario
 - README generation
 - Code explanation and tutoring
 
-Each workflow includes prompts that can be used independently or chained together for a complete development experience. The prompts adapt to your project's specific needs, technology choices, and development patterns.
+## Getting Started
 
-## Prompt Structure
+1. For a new project:
+   - Start with requirements generation
+   - Move to tech stack selection
+   - Follow the scaffolding workflow
 
-Each prompt has two associated files:
-- `[prompt-name].md` - The actual prompt instructions
-- `[prompt-name].meta.md` - Usage documentation and context
+2. For an existing project:
+   - Begin with code health analysis
+   - Use the post-scaffolding workflow
+   - Add features incrementally
 
-## Next Steps
-
-1. Review the requirements for your project
-2. Generate your initial tech stack using the tech stack generator
-3. Design your architecture
-4. Create scaffolding stories
-5. Begin implementation
+3. For any project:
+   - Review workflow documentation
+   - Verify chain dependencies
+   - Track progress systematically

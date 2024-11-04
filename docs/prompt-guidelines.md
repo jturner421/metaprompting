@@ -24,11 +24,11 @@
 - Separate command-line instructions
 - Maintain clear formatting
 
-5. Workflow Integration
-- Design prompts to work together
-- Allow for iteration and revision
-- Support different development stages
-- Enable flexible application types
+5. Workflow Chain Integration
+- Design prompts to fit into chains
+- Define clear inputs and outputs
+- Include chain verification points
+- Support systematic progress tracking
 
 ## Best Practices
 
@@ -36,25 +36,56 @@
 - One primary task per prompt
 - Clear scope boundaries
 - Minimal complexity
+- Define chain position if applicable
 
 2. Enable interaction
 - Break complex decisions into steps
 - Allow for user input and revision
 - Provide clear options
+- Support chain status checks
 
 3. Maintain context
 - Reference existing project files
 - Consider current development stage
 - Check for conflicts and dependencies
+- Track chain dependencies
 
 4. Support validation
 - Include quality checks
 - Verify compatibility
 - Confirm requirements alignment
+- Validate chain integrity
+
+## Chain Integration
+
+1. Input/Output Definition
+- List required inputs
+- Specify expected outputs
+- Document dependencies
+- Define validation criteria
+
+2. Chain Position
+- Identify preceding phases
+- Document following phases
+- Specify verification points
+- Include progress tracking
+
+3. Status Commands
+- Provide status check commands
+- Include progress indicators
+- Support chain integrity checks
+- Enable workflow validation
 
 ## Testing Prompts
 
-1. Verify prompt works across different AI models
-2. Test with various project types and sizes
-3. Confirm output consistency
-4. Validate workflow integration
+1. Individual Testing
+- Verify prompt works across different AI models
+- Test with various project types and sizes
+- Confirm output consistency
+- Validate standalone operation
+
+2. Chain Testing
+- Test chain integration
+- Verify input/output flow
+- Validate chain integrity
+- Confirm progress tracking
