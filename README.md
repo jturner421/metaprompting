@@ -1,5 +1,7 @@
 # Software Development Prompt Library
 
+> **⚠️ Work in Progress**: While this library already contains many useful prompts, it is still under active development. Some features and documentation may be incomplete or subject to change.
+
 A collection of AI-powered prompts designed to streamline software development workflows. Each prompt is crafted to work directly with AI coding assistants, providing consistent guidance across different development phases.
 
 ## Core Features
