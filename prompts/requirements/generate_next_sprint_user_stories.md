@@ -90,6 +90,11 @@ Recommended story count for sprint: 3 stories
 - Minimize dependency chains (max one level when possible)
 - Keep technical implementation details at appropriate level
 - Ensure acceptance criteria are specific and testable
+- IMPORTANT: Do not include test-related items in acceptance criteria
+  - No unit testing criteria
+  - No integration testing criteria
+  - No test coverage requirements
+  - Testing should be handled separately considered a part of the common "definition of done" and so should never be included in the acceptance criteria
 
 Example story format:
 ```
@@ -98,8 +103,9 @@ As a developer, I want to implement local storage functionality so that journal 
 
 Acceptance Criteria:
 - Local storage service is implemented
-- Basic CRUD operations are tested
-- Error handling is in place
+- Basic CRUD operations are functional
+- Error handling is in place for storage operations
+- Failed operations show appropriate user feedback
 
 Dependencies: None
 
@@ -113,8 +119,9 @@ As a user, I want to create new journal entries so that I can record my thoughts
 
 Acceptance Criteria:
 - Form displays required fields
-- Input validation is implemented
+- Input validation prevents invalid data
 - Successful save confirmation is shown
+- Error messages are displayed when validation fails
 
 Dependencies: S2.1 - Local Storage
 
