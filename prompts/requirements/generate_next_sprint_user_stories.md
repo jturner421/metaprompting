@@ -1,4 +1,4 @@
-# Sprint Story Generation Role Prompt
+# Post-scaffolding Sprint Story Generation Prompt
 
 This role responds to two commands:
 - "#generate-sprint-stories" - Starts or resumes sprint story generation
