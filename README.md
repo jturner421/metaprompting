@@ -6,6 +6,13 @@ A collection of AI-powered prompts designed to streamline software development w
 
 ## Core Features
 
+- **AI Workflow Chains**
+  - Structured sequences of connected prompts
+  - Input/output dependencies between phases
+  - Verification points for chain integrity
+  - Systematic development processes
+  - Progress tracking and validation
+
 - **Project Initialization**
   - Requirements generation and refinement
   - Technology stack selection with BOM
@@ -22,8 +29,9 @@ A collection of AI-powered prompts designed to streamline software development w
   - README generation
   - Code explanation and tutoring
 
-## Using the Prompts
+## Using the Library
 
+### Individual Prompts
 1. Navigate to the relevant prompt in `/prompts` directory
 2. Share the raw URL with your AI assistant
 3. Begin using the workflow
@@ -31,6 +39,14 @@ A collection of AI-powered prompts designed to streamline software development w
 Each prompt has two components:
 - `[prompt-name].md` - AI instructions
 - `[prompt-name].meta.md` - Usage documentation
+
+### Workflow Chains
+1. Review available workflows in `/workflows` directory
+2. Choose a workflow that matches your development phase
+3. Follow the chain sequence, ensuring each phase's:
+   - Required inputs are available
+   - Outputs are validated
+   - Dependencies are satisfied
 
 ## Project Structure
 
