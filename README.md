@@ -80,7 +80,7 @@ software-dev-prompt-library/
 
 ## Getting Started
 
-1. Review [getting-started.md](docs/getting-started.md) to understand available workflows
+1. Review [getting-started.md](docs/guides/getting-started.md) to understand available workflows
 2. Choose your starting point:
    - New project? Start with requirements generation
    - Existing project? Begin with code health analysis
@@ -89,7 +89,7 @@ software-dev-prompt-library/
 
 ## Contributing
 
-1. Review [prompt-guidelines.md](docs/prompt-guidelines.md) for prompt structure and principles
+1. Review [prompt-guidelines.md](docs/guides/prompt-guidelines.md) for prompt structure and principles
 2. Each prompt needs both implementation (.md) and documentation (.meta.md)
 3. Test prompts across different AI models and project types
 4. Submit additions that focus on specific development tasks
