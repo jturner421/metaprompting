@@ -23,7 +23,7 @@ Phase 4: Story Implementation
 
 **Initial Inputs Required:**
 - Project requirements list
-- Current set of user stories
+- Previous sprint's user stories
 - Core technology stack (e.g., package.json, pom.xml, requirements.txt)
 
 **Key Outputs → [Feed into Phase 2]:**
