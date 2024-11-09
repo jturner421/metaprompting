@@ -190,7 +190,7 @@ To maintain workflow integrity:
 
 This workflow chain has been tested with:
 - AI Assistant: aider
-- LLM: Claude 3.5 Sonnet (October 22, 2024 release)
+- LLM: Claude 3.5 Sonnet
 
 The chain assumes:
 - AI can handle file operations
