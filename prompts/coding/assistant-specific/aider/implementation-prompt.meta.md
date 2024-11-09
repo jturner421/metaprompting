@@ -1,9 +1,11 @@
 # Metadata: Implementation Prompt
 
 ## AI Assistant Compatibility
-- Primary Assistant: Aider
-- Compatible Assistants: 
-  * Claude
+- Tested With: 
+  * Aider
+  * LLM: Claude 3.5 Sonnet (October 22, 2024 release)
+- Potential Compatible Assistants: 
+  * Other Claude models
   * GitHub Copilot (with modifications)
 
 ## SDLC Phase
