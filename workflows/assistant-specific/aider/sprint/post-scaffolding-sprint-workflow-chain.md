@@ -111,7 +111,7 @@ Monitor chain progress using status commands:
 #analyze-impl-status
 #generate-sprint-stories-status
 #analyze-story-status
-#implement-story-status
+#implementation-status
 ```
 
 ### Chain Dependencies
