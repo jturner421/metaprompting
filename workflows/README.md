@@ -20,7 +20,7 @@ This chained approach ensures:
 
 ## Available Workflows
 
-### [Post-Scaffolding Sprint Workflow](post-scaffolding-sprint-workflow-chain.md)
+### [Post-Scaffolding Sprint Workflow](assistant-specific/aider/sprint/post-scaffolding-sprint-workflow-chain.md)
 A four-phase workflow for planning and implementing new features:
 1. Implementation Status Analysis - Assesses current feature status and project requirements
 2. Sprint Story Generation - Creates well-formed user stories based on implementation analysis
