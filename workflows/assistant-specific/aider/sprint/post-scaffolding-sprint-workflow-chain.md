@@ -4,7 +4,7 @@
 
 **Note: This workflow is designed for projects that have already completed their initial scaffolding (Sprint 1). It assumes basic project structure, initial dependencies, and core technologies are already in place.**
 
-![Post-Scaffolding Sprint Workflow Chain](../../../../images/post-scaffolding-sprint-workflow-chain.png)
+![Post-Scaffolding Sprint Workflow Chain](images/post-scaffolding-sprint-workflow-chain.png)
 
 This workflow represents a chained sequence of AI-assisted processes for planning and implementing new features. Each phase produces specific outputs that become required inputs for subsequent phases, creating a connected chain of development activities.
 
