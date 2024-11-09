@@ -1,6 +1,10 @@
 # Software Development Prompt Library
 
-> **⚠️ Work in Progress**: While this library already contains many useful prompts, it is still under active development. Some features and documentation may be incomplete or subject to change.
+> **⚠️ Work in Progress**: 
+> - The library contains prompts at various stages of development
+> - Prompts within the [Post-Scaffolding Sprint Workflow](workflows/assistant-specific/aider/sprint/post-scaffolding-sprint-workflow-chain.md) have been most rigorously tested
+> - Many individual prompts are not yet part of a defined workflow and have not been fully tested
+> - Ongoing development and validation is in progress
 
 A collection of AI-powered prompts designed to streamline software development workflows. Each prompt is crafted to work directly with AI coding assistants, providing consistent guidance across different development phases.
 
