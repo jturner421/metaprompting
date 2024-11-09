@@ -100,7 +100,7 @@ Systematically implement one specific step from the story analysis, ensuring all
 
 4. **Implement Stories:**
    ```
-   #implement-story S<X.Y>
+   #implement-step S<X.Y>
    ```
    - Requires complete story analysis outputs
    - Execute for each story in sequence
