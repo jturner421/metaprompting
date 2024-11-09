@@ -4,70 +4,66 @@
 
 This workflow represents a chained sequence of AI-assisted processes for planning and implementing new features. Each phase produces specific outputs that become required inputs for subsequent phases, creating a connected chain of development activities.
 
-The workflow operates through three sequential phases:
+The workflow operates through four sequential phases:
+
 ```
-Phase 1: Implementation Analysis
+Phase 1: Implementation Status Analysis
 ↓ [Outputs feed Phase 2]
 Phase 2: Sprint Story Generation
 ↓ [Outputs feed Phase 3]
-Phase 3: Story Implementation
+Phase 3: Story Analysis
+↓ [Outputs feed Phase 4]
+Phase 4: Story Implementation
 ```
 
 ## Input/Output Chain
 
-### Phase 1: Implementation Status Analysis (#analyze-impl) 
-[Implementation Analysis Prompt](../prompts/requirements/analyze_project_for_implemented_features.md) | [Meta](../prompts/requirements/analyze_project_for_implemented_features.meta.md)
+### Phase 1: Implementation Status Analysis (`#analyze-impl`)
+[Implementation Analysis Prompt](implementation-analysis-prompt.md)
+
 **Initial Inputs Required:**
 - Project requirements list
-- Current user stories
-- Core technology stack information
+- Current set of user stories
+- Core technology stack (e.g., package.json, pom.xml, requirements.txt)
 
 **Key Outputs → [Feed into Phase 2]:**
-- Implementation status report documenting:
-  - Completed features with supporting evidence
-  - Partially implemented features with progress details
-  - Not yet implemented features
-- Prioritized feature list ordered by dependencies
-- Technical dependency mapping
+- Implementation Status Report (`implementation_status.md`)
 
-### Phase 2: Sprint Story Generation (#generate-sprint-stories)
-[Story Generation Prompt](../prompts/requirements/generate_next_sprint_user_stories.md) | [Meta](../prompts/requirements/generate_next_sprint_user_stories.meta.md)
+### Phase 2: Sprint Story Generation (`#generate-sprint-stories`)
+[Sprint Story Generation Prompt](sprint-story-generation-prompt.md)
+
 **Required Inputs (including Phase 1 outputs):**
-- Implementation status report (from Phase 1)
-- Prioritized feature list (from Phase 1)
-- Technical dependency mapping (from Phase 1)
-- Previous sprint stories
-- Sprint number
-- Technology stack details
+- Implementation Status Report
+- Previous sprint's user stories
 
 **Key Outputs → [Feed into Phase 3]:**
-- Technical dependency analysis
-- Set of well-formed user stories, each with:
-  - Story identifier (S<X.Y>)
-  - Acceptance criteria
-  - Technical dependencies
-  - Developer notes
-  - Implementation considerations
+- Sprint Stories (`sprint_X_stories.md`)
 
-### Phase 3: Story Implementation (#implement-story)
-[Story Implementation Prompt](../prompts/coding/user-story-implementation.md) | [Meta](../prompts/coding/user-story-implementation.meta.md)
-**Required Inputs (including Phase 2 outputs):**
-- User stories with identifiers (from Phase 2)
-- Technical dependency analysis (from Phase 2)
-- Implementation considerations (from Phase 2)
-- Project technical requirements
-- Current dependencies list
+### Phase 3: Story Analysis (`#analyze-story S<X.Y>`)
+[Story Analysis Prompt](story-analysis-prompt.md)
+
+**Initial Inputs Required:**
+- Sprint story for S<X.Y>
+
+**Key Outputs → [Feed into Phase 4]:**
+- Story Steps Report (`S<X.Y>-story-steps.md`)
+
+### Phase 4: Story Implementation (`#implement-story`)
+[Implementation Prompt](implementation-prompt.md)
+
+**Required Inputs (including Phase 3 outputs):**
+- Story Steps Report (`S<X.Y>-story-steps.md`)
+- Sprint story
+- Project's dependency definition file (e.g., package.json)
 
 **Key Outputs:**
-- Implemented features meeting acceptance criteria
-- Updated dependency list
-- Verified working increments
+- Code changes implementing the specified step
 
 ## Workflow Chain Execution
 
 ### Starting the Chain
 
-1. **Initiate Analysis:**
+1. **Initiate Implementation Analysis:**
    ```
    #analyze-impl
    ```
@@ -81,11 +77,18 @@ Phase 3: Story Implementation
    - Must have all Phase 1 outputs available
    - Proceeds only when analysis outputs are complete
 
-3. **Implement Stories:**
+3. **Analyze Story:**
+   ```
+   #analyze-story S<X.Y>
+   ```
+   - Ensure the specific user story is available in the context
+   - Wait for story analysis to complete before proceeding
+
+4. **Implement Stories:**
    ```
    #implement-story S<X.Y>
    ```
-   - Requires complete story generation outputs
+   - Requires complete story analysis outputs
    - Execute for each story in sequence
 
 ### Progress Tracking
@@ -93,22 +96,25 @@ Monitor chain progress using status commands:
 ```
 #analyze-impl-status
 #generate-sprint-stories-status
+#analyze-story-status
 #implement-story-status
 ```
 
 ### Chain Dependencies
 
 ```
-Implementation Analysis
+Implementation Status Analysis
 └── Outputs required for Story Generation:
-    ├── Implementation status report
-    ├── Feature priorities
-    └── Technical dependencies
+    ├── Implementation Status Report
+    └── Previous sprint's user stories
     └── Story Generation
-        └── Outputs required for Story Implementation:
-            ├── User stories
-            ├── Technical analysis
-            └── Implementation considerations
+        └── Outputs required for Story Analysis:
+            ├── Sprint Stories
+            └── Story Analysis
+                └── Outputs required for Story Implementation:
+                    ├── Story Steps Report
+                    └── Sprint story
+                    └── Project's dependency definition file
 ```
 
 ## Maintaining Chain Integrity
@@ -118,13 +124,14 @@ Each phase has specific verification points where the chain integrity must be co
 
 1. **Analysis → Story Generation**
    - Verify implementation status report is complete
-   - Confirm all features are properly prioritized
-   - Validate technical dependency mapping
+   - Confirm previous sprint stories are available
 
-2. **Story Generation → Implementation**
-   - Verify all stories have required components
-   - Confirm technical dependencies are properly mapped
-   - Validate acceptance criteria are testable
+2. **Story Generation → Story Analysis**
+   - Verify all sprint stories have required components
+
+3. **Story Analysis → Implementation**
+   - Verify story steps report is complete
+   - Confirm dependency definition file is available
 
 ### Chain Break Prevention
 
