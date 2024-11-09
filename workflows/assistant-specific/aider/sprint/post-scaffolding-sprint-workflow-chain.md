@@ -120,15 +120,15 @@ Monitor chain progress using status commands:
 Implementation Status Analysis
 └── Outputs required for Story Generation:
     ├── Implementation Status Report
-    └── Previous sprint's user stories
+    ├── Previous sprint's user stories
     └── Story Generation
         └── Outputs required for Story Analysis:
-            ├── Sprint Stories
+            ├── Sprint Stories (sprint_X_stories.md)
             └── Story Analysis
                 └── Outputs required for Story Implementation:
-                    ├── Story Steps Report
-                    └── Sprint story
-                    └── Project's dependency definition file
+                    ├── Story Steps Report (S<X.Y>-story-steps.md)
+                    ├── Sprint story
+                    └── Project's dependency definition file (e.g., package.json)
 ```
 
 ## Maintaining Chain Integrity
