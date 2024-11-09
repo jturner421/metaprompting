@@ -20,6 +20,7 @@ Phase 4: Story Implementation
 
 ### Phase 1: Implementation Status Analysis (`#analyze-impl`)
 [Implementation Analysis Prompt](../../../prompts/planning/assistant-specific/aider/implementation-analysis-prompt.md)
+// Purpose: Assess current project state, identify implemented and pending features
 
 **Initial Inputs Required:**
 - Project requirements list
@@ -31,6 +32,7 @@ Phase 4: Story Implementation
 
 ### Phase 2: Sprint Story Generation (`#generate-sprint-stories`)
 [Sprint Story Generation Prompt](../../../prompts/planning/assistant-specific/aider/sprint-story-generation-prompt.md)
+// Purpose: Create focused user stories for the next sprint based on technical dependencies
 
 **Required Inputs (including Phase 1 outputs):**
 - Implementation Status Report
@@ -41,6 +43,7 @@ Phase 4: Story Implementation
 
 ### Phase 3: Story Analysis (`#analyze-story S<X.Y>`)
 [Story Analysis Prompt](../../../prompts/planning/assistant-specific/aider/story-analysis-prompt.md)
+// Purpose: Break down user stories into atomic, implementable functional steps
 
 **Initial Inputs Required:**
 - Sprint story for S<X.Y>
@@ -50,6 +53,7 @@ Phase 4: Story Implementation
 
 ### Phase 4: Story Implementation (`#implement-story`)
 [Implementation Prompt](../../../prompts/coding/assistant-specific/aider/implementation-prompt.md)
+// Purpose: Carefully implement specific steps from story analysis, ensuring all requirements are met
 
 **Required Inputs (including Phase 3 outputs):**
 - Story Steps Report (`S<X.Y>-story-steps.md`)
