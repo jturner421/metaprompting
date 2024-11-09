@@ -14,8 +14,8 @@
 - Workflow: Post-Scaffolding Sprint Workflow
 
 ## Complexity Rating
-- Complexity: High
-- Cognitive Load: Significant
+- Complexity: Medium
+- Cognitive Load: Moderate
 - Technical Depth: Requires comprehensive project understanding
 
 ## Usage Guidelines
