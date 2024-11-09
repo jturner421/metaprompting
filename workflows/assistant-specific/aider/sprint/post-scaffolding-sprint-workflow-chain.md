@@ -188,9 +188,10 @@ To maintain workflow integrity:
 
 ## AI Integration Notes
 
-This workflow chain has been tested with:
+This workflow chain has been tested with different LLMs:
 - AI Assistant: aider
-- LLM: Claude 3.5 Sonnet
+- Implementation Prompt: Claude 3.5 Sonnet (October 22, 2024 release)
+- Other Workflow Prompts: Claude 3.5 Haiku (October 22, 2024 release)
 
 The chain assumes:
 - AI can handle file operations
