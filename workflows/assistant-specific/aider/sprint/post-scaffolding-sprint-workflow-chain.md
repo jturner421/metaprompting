@@ -19,7 +19,7 @@ Phase 4: Story Implementation
 ## Input/Output Chain
 
 ### Phase 1: Implementation Status Analysis (`#analyze-impl`)
-[Implementation Analysis Prompt](implementation-analysis-prompt.md)
+[Implementation Analysis Prompt](../../../prompts/planning/assistant-specific/aider/implementation-analysis-prompt.md)
 
 **Initial Inputs Required:**
 - Project requirements list
@@ -30,7 +30,7 @@ Phase 4: Story Implementation
 - Implementation Status Report (`implementation_status.md`)
 
 ### Phase 2: Sprint Story Generation (`#generate-sprint-stories`)
-[Sprint Story Generation Prompt](sprint-story-generation-prompt.md)
+[Sprint Story Generation Prompt](../../../prompts/planning/assistant-specific/aider/sprint-story-generation-prompt.md)
 
 **Required Inputs (including Phase 1 outputs):**
 - Implementation Status Report
@@ -40,7 +40,7 @@ Phase 4: Story Implementation
 - Sprint Stories (`sprint_X_stories.md`)
 
 ### Phase 3: Story Analysis (`#analyze-story S<X.Y>`)
-[Story Analysis Prompt](story-analysis-prompt.md)
+[Story Analysis Prompt](../../../prompts/planning/assistant-specific/aider/story-analysis-prompt.md)
 
 **Initial Inputs Required:**
 - Sprint story for S<X.Y>
@@ -49,7 +49,7 @@ Phase 4: Story Implementation
 - Story Steps Report (`S<X.Y>-story-steps.md`)
 
 ### Phase 4: Story Implementation (`#implement-story`)
-[Implementation Prompt](implementation-prompt.md)
+[Implementation Prompt](../../../prompts/coding/assistant-specific/aider/implementation-prompt.md)
 
 **Required Inputs (including Phase 3 outputs):**
 - Story Steps Report (`S<X.Y>-story-steps.md`)
