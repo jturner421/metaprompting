@@ -60,10 +60,10 @@ Break down user stories into atomic, implementable functional steps
 **Key Outputs → [Feed into Phase 4]:**
 - Story Steps Report (`S<X.Y>-story-steps.md`)
 
-### Phase 4: Story Implementation (`#implement-story`)
+### Phase 4: Story Implementation (`#implement-step S<X.Y>`)
 [Implementation Prompt](../../../../prompts/coding/assistant-specific/aider/implementation-prompt.md)
 #### Purpose
-Carefully implement specific steps from story analysis, ensuring all requirements are met
+Systematically implement one specific step from the story analysis, ensuring all requirements are met using only approved dependencies
 
 **Required Inputs (including Phase 3 outputs):**
 - Story Steps Report (`S<X.Y>-story-steps.md`)
