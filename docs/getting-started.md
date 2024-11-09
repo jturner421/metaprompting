@@ -1,83 +1,58 @@
-# Getting Started with AI-Assisted Development Prompts
+# Getting Started with AI-Assisted Development
 
-This library provides a comprehensive, systematic approach to AI-assisted software development through:
-1. Modular, task-specific prompts
-2. Interconnected workflow chains that guide the development process
+## Overview
 
-## Project Structure
+This library provides a systematic approach to AI-assisted software development, focusing on:
+- Modular, task-specific AI interactions
+- Structured workflow management
+- Comprehensive development guidance
 
-```
-project-root/
-├── docs/                   # Project documentation
-├── prompts/                # AI prompt library
-│   ├── architecture/       # System design prompts
-│   ├── code-analysis/      # Code health and review prompts
-│   ├── coding/             # Implementation prompts
-│   ├── documentation/      # Documentation generation prompts
-│   ├── learning/           # Project understanding prompts
-│   ├── maintenance/        # Project maintenance prompts
-│   ├── planning/           # Project planning prompts
-│   ├── requirements/       # Requirements analysis prompts
-│   └── testing/            # Testing and validation prompts
-└── workflows/              # Workflow chain definitions
-    ├── general/            # Generic workflow templates
-    └── assistant-specific/ # AI assistant-specific workflows
-        └── aider/          # Workflows for specific AI assistants
-```
+## Core Principles
 
-## Prompt Types
+1. **Modularity**: Break down complex development tasks into manageable, focused interactions
+2. **Systematic Approach**: Use structured workflows to guide development
+3. **Flexibility**: Adapt to different project types and development stages
+4. **Continuous Validation**: Verify outputs at each stage of development
 
-Each prompt category contains two key files:
-- `[prompt-name].md`: Detailed AI instruction set
-- `[prompt-name].meta.md`: Metadata with usage guidelines, complexity, and compatibility information
+## Project Organization
 
-## Workflow Chains
+The library is organized to support different aspects of software development:
+- Prompt libraries for various development phases
+- Workflow definitions to guide AI-assisted processes
+- Metadata to provide context and usage guidelines
 
-Our workflow chains provide a structured, step-by-step approach to development:
+## Development Workflow Strategies
 
-### Post-Scaffolding Sprint Workflow
-1. **Implementation Status Analysis**
-   - Assess current project state
-   - Identify implemented and pending features
+### Key Workflow Components
+- Prompt-driven interactions
+- Step-by-step development processes
+- Continuous integration of AI assistance
 
-2. **Sprint Story Generation**
-   - Create focused user stories
-   - Prioritize based on technical dependencies
-
-3. **Story Analysis**
-   - Break down user stories into atomic steps
-   - Define clear implementation criteria
-
-4. **Story Implementation**
-   - Carefully implement each story step
-   - Ensure all requirements are met
-
-## Development Approaches
-
-### New Project Initialization
-- Generate initial requirements
-- Select technology stack
-- Create project scaffolding
-- Follow initial sprint workflow
-
-### Existing Project Enhancement
-- Analyze current implementation status
-- Generate stories for next sprint
-- Implement features incrementally
-- Maintain comprehensive documentation
+### Workflow Characteristics
+- Technology-agnostic approach
+- Emphasis on incremental development
+- Clear verification points
+- Adaptable to different project contexts
 
 ## Best Practices
 
-- Use status commands to track workflow progress
-- Verify inputs and outputs at each workflow stage
-- Maintain clear, atomic implementation steps
-- Document all decisions and changes
-- Leverage AI assistants with workflow-specific prompts
+1. **Granular Interactions**: Break tasks into atomic, manageable steps
+2. **Contextual Awareness**: Maintain comprehensive project context
+3. **Iterative Validation**: Verify and validate at each development stage
+4. **Documentation**: Maintain clear, comprehensive documentation
+5. **Flexibility**: Adapt workflows to project-specific needs
 
 ## Getting Started
 
-1. Review the project structure
+1. Understand the project's modular structure
 2. Explore available prompts and workflows
-3. Choose the appropriate workflow for your development phase
-4. Follow the systematic, step-by-step process
+3. Select appropriate tools for your development phase
+4. Follow systematic, step-by-step processes
 5. Continuously validate and document progress
+
+## Continuous Improvement
+
+- Regularly review and refine AI-assisted development strategies
+- Stay updated with emerging AI development technologies
+- Adapt workflows based on project experiences
+- Share insights and improvements with the community
