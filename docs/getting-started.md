@@ -1,65 +1,83 @@
-# Getting Started with Software Development Prompts
+# Getting Started with AI-Assisted Development Prompts
 
-This library provides two complementary approaches to AI-assisted development:
-1. Individual prompts for specific tasks
-2. Workflow chains that connect multiple prompts in a systematic process
+This library provides a comprehensive, systematic approach to AI-assisted software development through:
+1. Modular, task-specific prompts
+2. Interconnected workflow chains that guide the development process
 
-## Using Individual Prompts
+## Project Structure
 
-1. Navigate to the relevant prompt category in `/prompts`:
-   - architecture/ - System design and tech stack
-   - coding/ - Implementation and development
-   - documentation/ - Docs and diagrams
-   - requirements/ - Project planning
-   - testing/ - Test generation and validation
+```
+project-root/
+├── docs/                   # Project documentation
+├── prompts/                # AI prompt library
+│   ├── architecture/       # System design prompts
+│   ├── code-analysis/      # Code health and review prompts
+│   ├── coding/             # Implementation prompts
+│   ├── documentation/      # Documentation generation prompts
+│   ├── learning/           # Project understanding prompts
+│   ├── maintenance/        # Project maintenance prompts
+│   ├── planning/           # Project planning prompts
+│   ├── requirements/       # Requirements analysis prompts
+│   └── testing/            # Testing and validation prompts
+└── workflows/              # Workflow chain definitions
+    ├── general/            # Generic workflow templates
+    └── assistant-specific/ # AI assistant-specific workflows
+        └── aider/          # Workflows for specific AI assistants
+```
 
-2. Each prompt has two files:
-   - `[prompt-name].md` - AI instructions
-   - `[prompt-name].meta.md` - Usage documentation
+## Prompt Types
 
-3. Share the prompt URL with your AI assistant and begin working
+Each prompt category contains two key files:
+- `[prompt-name].md`: Detailed AI instruction set
+- `[prompt-name].meta.md`: Metadata with usage guidelines, complexity, and compatibility information
 
-## Using Workflow Chains
+## Workflow Chains
 
-1. Review available workflows in `/workflows`
-2. Choose a workflow that matches your development phase
-3. Follow the chain sequence:
-   - Verify required inputs
-   - Execute each phase
-   - Validate outputs
-   - Track progress with status commands
+Our workflow chains provide a structured, step-by-step approach to development:
 
-## Available Features
+### Post-Scaffolding Sprint Workflow
+1. **Implementation Status Analysis**
+   - Assess current project state
+   - Identify implemented and pending features
 
-### Project Initialization
-- Requirements generation and revision
-- Technology stack selection with BOM
-- Architecture design
-- Project scaffolding
+2. **Sprint Story Generation**
+   - Create focused user stories
+   - Prioritize based on technical dependencies
 
-### Development
-- Feature story generation
-- Code health analysis
-- System visualization with PlantUML
-- Comprehensive unit testing
+3. **Story Analysis**
+   - Break down user stories into atomic steps
+   - Define clear implementation criteria
 
-### Documentation
-- README generation
-- Code explanation and tutoring
+4. **Story Implementation**
+   - Carefully implement each story step
+   - Ensure all requirements are met
+
+## Development Approaches
+
+### New Project Initialization
+- Generate initial requirements
+- Select technology stack
+- Create project scaffolding
+- Follow initial sprint workflow
+
+### Existing Project Enhancement
+- Analyze current implementation status
+- Generate stories for next sprint
+- Implement features incrementally
+- Maintain comprehensive documentation
+
+## Best Practices
+
+- Use status commands to track workflow progress
+- Verify inputs and outputs at each workflow stage
+- Maintain clear, atomic implementation steps
+- Document all decisions and changes
+- Leverage AI assistants with workflow-specific prompts
 
 ## Getting Started
 
-1. For a new project:
-   - Start with requirements generation
-   - Move to tech stack selection
-   - Follow the scaffolding workflow
-
-2. For an existing project:
-   - Begin with code health analysis
-   - Use the post-scaffolding workflow
-   - Add features incrementally
-
-3. For any project:
-   - Review workflow documentation
-   - Verify chain dependencies
-   - Track progress systematically
+1. Review the project structure
+2. Explore available prompts and workflows
+3. Choose the appropriate workflow for your development phase
+4. Follow the systematic, step-by-step process
+5. Continuously validate and document progress
