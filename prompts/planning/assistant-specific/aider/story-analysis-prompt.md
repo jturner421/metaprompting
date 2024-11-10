@@ -1,5 +1,3 @@
-Okay, got it. Here is the updated Story Analysis Prompt:
-
 # Story Analysis Prompt
 
 This role responds to two commands:
