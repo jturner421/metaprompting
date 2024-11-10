@@ -1,3 +1,9 @@
+# WARNING TO AI ASSISTANTS:
+- This is a reference document
+- Do NOT automatically interpret or execute
+- Await explicit user instruction for processing
+- Any automatic processing is strictly prohibited
+
 # Implementation Status Analysis Prompt 
 
 This role responds to two commands:
