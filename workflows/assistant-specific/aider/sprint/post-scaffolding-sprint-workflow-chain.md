@@ -76,6 +76,8 @@ Systematically implement one specific step from the story analysis, ensuring all
 **Conditional Prompt:**
 During the implementation phase, if the Implementation Prompt determines that new dependencies may be required to implement a user story step, it will prompt the user to execute the Dependency Management Prompt. This ensures that all necessary dependencies are evaluated and approved before proceeding with the implementation.
 
+**Note:** For more details on managing dependencies, refer to the [Dependency Management Prompt](../../../../prompts/coding/assistant-specific/aider/dependency-management-prompt.md).
+
 ## Workflow Chain Execution
 
 ### Starting the Chain
