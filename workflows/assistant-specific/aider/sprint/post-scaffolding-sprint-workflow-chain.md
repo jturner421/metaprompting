@@ -64,6 +64,11 @@ Break down user stories into atomic, implementable functional steps
 
 ### Phase 4A: Story Steps Implementation (`#implement-step S<X.Y> [step-number]`)
 [Implementation Prompt](../../../../prompts/coding/assistant-specific/aider/implementation-prompt.md)
+#### Purpose
+Systematically implement one specific step from the story analysis, ensuring all requirements are met using only approved dependencies.
+
+**Key Outputs → [Feed into Phase 4B]:**
+- Code changes implementing the specified step
 
 ### Phase 4B: Story Steps Unit Testing (`#generate-tests S<X.Y> [step-number]`)
 [Unit Test Generation Prompt](../../../../prompts/testing/assistant-specific/aider/unit-test-prompt.md)
