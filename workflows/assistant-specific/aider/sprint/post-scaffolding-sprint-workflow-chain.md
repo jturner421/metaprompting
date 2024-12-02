@@ -12,15 +12,15 @@ This workflow represents a chained sequence of AI-assisted processes for plannin
 
 The workflow operates through four sequential phases:
 
-↓ [Outputs feed Unit Testing]
 ```
 Phase 1: Implementation Status Analysis
 ↓ [Outputs feed Phase 2]
 Phase 2: Sprint Story Generation
 ↓ [Outputs feed Phase 3]
 Phase 3: Story Analysis
-↓ [Outputs feed Phase 4]
+↓ [Outputs feed Phase 4A]
 Phase 4A: Story Steps Implementation
+↓ [Outputs feed Phase 4B]
 Phase 4B: Unit Testing
 ```
 
@@ -59,7 +59,7 @@ Break down user stories into atomic, implementable functional steps
 **Initial Inputs Required:**
 - Sprint story for S<X.Y>
 
-**Key Outputs → [Feed into Phase 4]:**
+**Key Outputs → [Feed into Phase 4A]:**
 - Story Steps Report (`S<X.Y>-story-steps.md`)
 
 ### Phase 4A: Story Steps Implementation (`#implement-step S<X.Y> [step-number]`)
