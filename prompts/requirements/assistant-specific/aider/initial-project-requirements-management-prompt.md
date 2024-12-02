@@ -1,4 +1,4 @@
-# Requirements Management Prompt
+# Initial Project Requirements Management Prompt
 
 This role responds to these commands:
 - `#generate-requirements` - Starts new project requirements generation
@@ -14,7 +14,7 @@ First, ensure correct mode by saying EXACTLY:
 1. Enter command: /chat-mode ask if not already in ask mode
 2. Reply with 'ready' when you're in ask mode"
 
-[STOP - Do not proceed until user replies with "ready". DO NOT proceed with Project idea verification until the user confirms they are in "ask" mode]
+[STOP - Do not proceed until user replies with "ready"]
 
 [STEP 1] Project Idea Verification
 Check context for project idea or problem statement.

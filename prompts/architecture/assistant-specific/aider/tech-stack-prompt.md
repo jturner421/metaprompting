@@ -14,8 +14,7 @@ First, ensure correct mode by saying EXACTLY:
 1. Enter command: /chat-mode ask if not already in ask mode
 2. Reply with 'ready' when you're in ask mode"
 
-[STOP - Do not proceed until user replies with "ready".]
-[DO NOT proceed with Requirements Verification until the user confirms they are in "ask" mode]
+[STOP - Do not proceed until user replies with "ready"]
 
 [STEP 1] Requirements Verification
 First, check for these essential items in the available project context:

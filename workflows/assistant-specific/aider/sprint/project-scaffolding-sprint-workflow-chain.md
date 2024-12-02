@@ -106,8 +106,8 @@ Systematically implement one specific step from the story analysis.
 **Key Outputs → [Feed into Phase 7B]:**
 - Code changes implementing the specified step
 
-**Dependency Management Note:**
-If new dependencies are required during implementation, the Dependency Management Prompt will be invoked to evaluate and approve them.
+*Conditional Prompt:**
+During the implementation phase, if the Implementation Prompt determines that new dependencies may be required to implement a user story step, it will prompt the user to execute the Dependency Management Prompt. This ensures that all necessary dependencies are evaluated and approved before proceeding with the implementation.
 
 **Iteration Note:**
 Phases 7A and 7B iterate until all steps for a user story have been implemented and unit tested.

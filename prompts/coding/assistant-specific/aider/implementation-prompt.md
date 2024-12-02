@@ -13,7 +13,7 @@ Say EXACTLY: "To proceed with implementation planning:
 1. Enter command: /chat-mode ask if not already in ask mode
 2. Reply with 'ready' when you're in ask mode"
 
-[STOP - Wait for user to confirm they are in ask mode]
+[STOP - Do not proceed until user replies with "ready"]
 
 CRITICAL: Planning Phase vs Implementation Phase
 

@@ -1,54 +1,71 @@
-# Metadata: Implementation Prompt
+# Metadata: # Implementation Prompt
 
 ## AI Assistant Compatibility
 - Tested With: 
   * Aider
-  * LLM: Claude 3.5 Sonnet (October 22, 2024 release)
+  * Claude 3.5 Sonnet (October 22, 2024 release)
 - Potential Compatible Assistants: 
   * Other Claude models
   * GitHub Copilot (with modifications)
+  * GPT-4 (with adaptations)
 
 ## SDLC Phase
-- Phase: Implementation
-- Sub-Phase: Detailed Feature Development
-- Workflow: Post-Scaffolding Sprint Workflow
+- Phase: Development
+- Sub-Phase: Implementation
+- Workflow: Story Step Execution
 
 ## Complexity Rating
 - Complexity: High
-- Cognitive Load: Significant
-- Technical Depth: Deep code-level understanding required
+- Cognitive Load: High
+- Technical Depth: Requires comprehensive understanding of development practices and dependency management
 
 ## Usage Guidelines
-- Prerequisite: Complete Story Analysis phase
+- Prerequisite: Story steps report
 - Requires: 
-  * Story Steps Report
-  * Sprint Story
-  * Project Dependency Definition
+  * Sprint story documentation
+  * Story step requirements
+  * Implementation context
+  * Approved dependencies
+  * Previous steps completion
 
 ## Prompt Characteristics
 - Input Driven: Yes
 - State Dependent: Yes
 - Requires Contextual Awareness: Critical
+- Command Driven: Yes (#implement-step, #implementation-status)
+- Phase Separation: Strict planning vs. implementation phases
+- Sequential Execution: Enforced step order
 
 ## Best Practices
-- Always verify story steps before implementation
-- Maintain atomic, incremental implementation approach
-- Prioritize existing project conventions
-- Validate each implementation step
+- Strict phase separation
+- Step-by-step implementation
+- Focused requirement coverage
+- Clear implementation planning
+- Dependency verification
+- Manual verification steps
+- Sequential progress tracking
+- Scope control per step
 
 ## Potential Challenges
-- Misinterpreting story requirements
-- Overlooking project-specific constraints
-- Generating non-idiomatic code
-- Failing to respect existing architectural patterns
+- Maintaining step boundaries
+- Managing implementation scope
+- Dependency requirements
+- Cross-step dependencies
+- Phase separation enforcement
+- Requirement verification
+- Implementation sequence control
 
 ## Recommended Mitigation Strategies
-- Carefully review story steps before implementation
-- Use implementation status commands to track progress
-- Implement verification steps for each feature
-- Conduct code review after AI-assisted implementation
+- Clear phase distinction
+- Explicit plan approval process
+- Strong scope boundaries
+- Dependency management integration
+- Regular progress verification
+- Manual verification steps
+- Sequential implementation enforcement
+- Clear completion criteria
 
 ## Version
 - Current Version: 1.0.0
-- Last Updated: 2024-11-09
+- Last Updated: 2024-12-02
 - Stability: Experimental

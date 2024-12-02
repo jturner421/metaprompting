@@ -15,7 +15,7 @@ Say EXACTLY: "To proceed with dependency analysis:
 1. Enter command: /chat-mode ask if not already in ask mode
 2. Reply with 'ready' when you're in ask mode"
 
-[STOP - Wait for user to confirm they are in ask mode]
+[STOP - Do not proceed until user replies with "ready"]
 
 COMPATIBILITY WARNING: When suggesting NEW dependencies:
 - NEVER use version ranges (e.g., ^1.5.0, ~2.0.0, >=3.0.0)
