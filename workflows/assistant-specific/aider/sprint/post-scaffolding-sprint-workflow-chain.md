@@ -12,6 +12,8 @@ This workflow represents a chained sequence of AI-assisted processes for plannin
 
 The workflow operates through four sequential phases:
 
+↓ [Outputs feed Unit Testing]
+Phase 4B: Unit Testing
 ```
 Phase 1: Implementation Status Analysis
 ↓ [Outputs feed Phase 2]
@@ -70,13 +72,25 @@ Systematically implement one specific step from the story analysis, ensuring all
 - Sprint story
 - Project's dependency definition file (e.g., package.json)
 
-**Key Outputs:**
+**Key Outputs → [Feed into Phase 4B]:**
 - Code changes implementing the specified step
 
 **Conditional Prompt:**
 During the implementation phase, if the Implementation Prompt determines that new dependencies may be required to implement a user story step, it will prompt the user to execute the Dependency Management Prompt. This ensures that all necessary dependencies are evaluated and approved before proceeding with the implementation.
 
 **Note:** For more details on managing dependencies, refer to the [Dependency Management Prompt](../../../../prompts/coding/assistant-specific/aider/dependency-management-prompt.md).
+
+### Phase 4B: Unit Testing (`#generate-tests S<X.Y> [step-number]`)
+[Unit Test Generation Prompt](../../../../prompts/testing/assistant-specific/aider/unit-test-prompt.md)
+#### Purpose
+Generate and verify unit tests for the implemented story step, ensuring comprehensive test coverage.
+
+**Required Inputs (including Phase 4 outputs):**
+- Code changes implementing the specified step
+
+**Key Outputs:**
+- Unit tests for the implemented step
+- Test results indicating pass/fail status
 
 ## Workflow Chain Execution
 
