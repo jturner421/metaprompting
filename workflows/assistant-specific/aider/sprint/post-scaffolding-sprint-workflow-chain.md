@@ -159,6 +159,12 @@ Implementation Status Analysis
                     ├── Story Steps Report (S<X.Y>-story-steps.md)
                     ├── Sprint story
                     └── Project's dependency definition file (e.g., package.json)
+                        └── Outputs required for Story Implementation:
+                            ├── Code changes implementing the specified step
+                            └── Story Steps Report (S<X.Y>-story-steps.md)
+                                └── Outputs required for Unit Testing:
+                                    ├── Unit tests for the implemented step
+                                    └── Test results indicating pass/fail status
 ```
 
 ## Maintaining Chain Integrity
