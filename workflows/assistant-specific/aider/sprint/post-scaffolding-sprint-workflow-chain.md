@@ -21,7 +21,7 @@ Phase 2: Sprint Story Generation
 ↓ [Outputs feed Phase 3]
 Phase 3: Story Analysis
 ↓ [Outputs feed Phase 4]
-Phase 4: Story Implementation and Testing
+Phase 4A: Story Implementation
 ```
 
 ## Input/Output Chain
@@ -62,11 +62,11 @@ Break down user stories into atomic, implementable functional steps
 **Key Outputs → [Feed into Phase 4]:**
 - Story Steps Report (`S<X.Y>-story-steps.md`)
 
-### Phase 4: Story Steps Implementation (`#implement-step S<X.Y> [step-number]`)
+### Phase 4A: Story Steps Implementation (`#implement-step S<X.Y> [step-number]`)
 [Implementation Prompt](../../../../prompts/coding/assistant-specific/aider/implementation-prompt.md)
-Phase 4B: Unit Testing (`#generate-tests S<X.Y> [step-number]`)
+
+### Phase 4B: Unit Testing (`#generate-tests S<X.Y> [step-number]`)
 [Unit Test Generation Prompt](../../../../prompts/testing/assistant-specific/aider/unit-test-prompt.md)
-[Implementation Prompt](../../../../prompts/coding/assistant-specific/aider/implementation-prompt.md)
 #### Purpose
 Systematically implement one specific step from the story analysis, ensuring all requirements are met using only approved dependencies
 
