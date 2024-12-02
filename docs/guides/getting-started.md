@@ -50,6 +50,21 @@ The library is organized to support different aspects of software development:
 4. Follow systematic, step-by-step processes
 5. Continuously validate and document progress
 
+## Using the Workflows
+
+This library provides two main workflows to assist with AI-driven development: scaffolding new projects and adding new features to existing projects. These workflows are located in the `workflows` directory and are designed to be used with the aider AI coding assistant. 
+
+### Scaffolding New Projects
+1. Navigate to the `workflows` directory.
+2. Follow the instructions in the `project-scaffolding-sprint-workflow-chain.md` to set up a new project structure.
+3. Use the prompts and guidelines provided to guide your development process.
+
+### Adding New Features
+1. Use the `post-scaffolding-sprint-workflow-chain.md` to integrate new features into an existing project.
+2. Follow the step-by-step instructions to ensure smooth feature integration.
+
+**Note:** This library is in the early stages of development. The workflows and prompts are currently in "beta" and have only been tested with the aider AI coding assistant. Future updates will include support for other AI coding assistants, such as Cursor and Codeium's Windsurf.
+
 ## Continuous Improvement
 
 - Regularly review and refine AI-assisted development strategies
