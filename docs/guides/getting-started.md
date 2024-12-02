@@ -68,7 +68,7 @@ This library provides two main workflows to assist with AI-driven development: s
 
 ## Metadata Information
 
-For detailed information about each prompt, including which LLMs the prompt has been tested with, refer to the metadata files. These files follow the naming convention of the prompt's filename, but with a `.meta.md` extension.
+For detailed information about each prompt, including which LLMs the prompt has been tested with, refer to the metadata files. These files reside in the same directory as their prompts and follow the naming convention of the prompt's filename, but with a `.meta.md` extension.
 
 ## Continuous Improvement
 
