@@ -66,6 +66,10 @@ This library provides two main workflows to assist with AI-driven development: s
 > **⚠️ Important Note:**  
 > This library is in the early stages of development. The workflows and prompts are currently in "beta" and have only been tested with the aider AI coding assistant. Future updates will include support for other AI coding assistants, such as Cursor and Codeium's Windsurf.
 
+## Metadata Information
+
+For detailed information about each prompt, including which LLMs the prompt has been tested with, refer to the metadata files. These files follow the naming convention of the prompt's filename, but with a `.meta.md` extension.
+
 ## Continuous Improvement
 
 - Regularly review and refine AI-assisted development strategies
