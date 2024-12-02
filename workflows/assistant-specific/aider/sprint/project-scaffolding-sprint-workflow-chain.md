@@ -106,6 +106,9 @@ Systematically implement one specific step from the story analysis.
 **Key Outputs → [Feed into Phase 7B]:**
 - Code changes implementing the specified step
 
+**Dependency Management Note:**
+If new dependencies are required during implementation, the Dependency Management Prompt will be invoked to evaluate and approve them.
+
 **Iteration Note:**
 Phases 7A and 7B iterate until all steps for a user story have been implemented and unit tested.
 
