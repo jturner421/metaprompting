@@ -63,7 +63,7 @@ This library provides two main workflows to assist with AI-driven development: s
 1. Use the [`post-scaffolding-sprint-workflow-chain.md`](../../workflows/assistant-specific/aider/sprint/post-scaffolding-sprint-workflow-chain.md) to integrate new features into an existing project.
 2. Follow the step-by-step instructions to ensure smooth feature integration.
 
-**Note:** This library is in the early stages of development. The workflows and prompts are currently in "beta" and have only been tested with the aider AI coding assistant. Future updates will include support for other AI coding assistants, such as Cursor and Codeium's Windsurf.
+> **Note:** This library is in the early stages of development. The workflows and prompts are currently in "beta" and have only been tested with the aider AI coding assistant. Future updates will include support for other AI coding assistants, such as Cursor and Codeium's Windsurf.
 
 ## Continuous Improvement
 
