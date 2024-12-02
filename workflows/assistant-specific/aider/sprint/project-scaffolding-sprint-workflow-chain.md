@@ -6,6 +6,8 @@
 
 Below is a visual representation of the workflow (simplified for brevity). Each phase has an associated prompt to guide the developer through that phase.
 
+![Project Scaffolding Sprint Workflow Chain](../../../../images/project-scaffolding-sprint-workflow.png)
+
 This workflow represents a chained sequence of AI-assisted processes for planning and implementing the initial project scaffolding. Each phase produces specific outputs that become required inputs for subsequent phases, creating a connected chain of development activities.
 
 The workflow operates through the following sequential phases:
