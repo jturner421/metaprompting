@@ -13,7 +13,6 @@ This workflow represents a chained sequence of AI-assisted processes for plannin
 The workflow operates through four sequential phases:
 
 ↓ [Outputs feed Unit Testing]
-Phase 4B: Unit Testing
 ```
 Phase 1: Implementation Status Analysis
 ↓ [Outputs feed Phase 2]
@@ -22,7 +21,7 @@ Phase 2: Sprint Story Generation
 Phase 3: Story Analysis
 ↓ [Outputs feed Phase 4]
 Phase 4A: Story Steps Implementation
-Phase 4B: Story Steps Unit Testing
+Phase 4B: Unit Testing
 ```
 
 ## Input/Output Chain
