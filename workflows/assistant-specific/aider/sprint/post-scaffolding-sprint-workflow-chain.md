@@ -70,10 +70,13 @@ Systematically implement one specific step from the story analysis, ensuring all
 **Key Outputs → [Feed into Phase 4B]:**
 - Code changes implementing the specified step
 
+**Iteration Note:**
+Phases 4A and 4B iterate until all steps for a user story have been implemented and unit tested.
+
 ### Phase 4B: Story Steps Unit Testing (`#generate-tests S<X.Y> [step-number]`)
 [Unit Test Generation Prompt](../../../../prompts/testing/assistant-specific/aider/unit-test-prompt.md)
 #### Purpose
-Systematically implement one specific step from the story analysis, ensuring all requirements are met using only approved dependencies
+Generate and verify unit tests for the implemented story step, ensuring comprehensive test coverage.
 
 **Required Inputs (including Phase 3 outputs):**
 - Story Steps Report (`S<X.Y>-story-steps.md`)
