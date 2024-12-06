@@ -202,7 +202,7 @@ All versions are exact (e.g., "1.2.3" not "^1.2.3") to ensure:
 - Reproducible builds
 ```
 
-Then, based on core technology, generate appropriate dependency file(s):
+Then, based on core technology, generate appropriate dependency file(s). Below are a few examples based on some currently popular technologies:
 
 For Node.js/JavaScript/TypeScript projects:
 ```json
