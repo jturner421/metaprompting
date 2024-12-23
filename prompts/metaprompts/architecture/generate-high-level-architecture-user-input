@@ -1,0 +1,10 @@
+Purpose: Create the initial system architecture based on requirements and technology choices
+Instructions:
+    Based on the provided requirements and technology stack, generate a high-level architecture design.
+    Include a clear component structure and relationships.
+    Recommend architecture pattern based on requirements and tech stack.
+    For each core component Map to system component, Assign technology from stack, define component responsibilities, andestablish component boundaries.
+    Then design the component relationships that: define the data flow,    establish communication patterns,identify integration points, and map dependencies
+    create a psuedo graph of of the layers and dependencies in a mermaid diagram.
+Sections: overview, core-components, component-relationships, project-structure, technology-mapping, development-guidelines
+Variables: user-prompt, provided-requirements, provided-tech-stack
