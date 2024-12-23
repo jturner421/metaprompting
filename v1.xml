@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metaprompt-template>
+    <workflow>
+        <aider-workflow>
+            <command-definitions>
+                <command name="[[command-name]]">
+                    <description>[[command-description]]</description>
+                    <steps>
+                        <step number="1">
+                            <action>Request chat mode</action>
+                            <prompt>To proceed with workflow:
+1. Enter command: /chat-mode ask if not already in ask mode
+2. Reply with 'ready' when you're in ask mode</prompt>
+                            <wait-for>ready</wait-for>
+                            <mode-required>ask</mode-required>
+                        </step>
+                        
+                        <step number="[[step-number]]">
+                            <action>[[step-action]]</action>
+                            <prompt>[[step-prompt]]</prompt>
+                            <wait-for>[[step-wait-condition]]</wait-for>
+                            <mode-required>[[step-mode]]</mode-required>
+                            <validation>
+                                <success-criteria>[[success-criteria]]</success-criteria>
+                                <failure-handling>[[failure-handling]]</failure-handling>
+                            </validation>
+                            <user-interaction>
+                                <expected-input>[[expected-input]]</expected-input>
+                                <conditional-paths>
+                                    <path condition="[[condition]]">
+                                        <next-step>[[next-step]]</next-step>
+                                        <action>[[conditional-action]]</action>
+                                    </path>
+                                </conditional-paths>
+                            </user-interaction>
+                        </step>
+                        
+                        <step number="[[total-steps]]">
+                            <action>Save and summarize flow</action>
+                            <prompt>Workflow complete. To save and finish:
+1. Enter command: /chat-mode code if not already in code mode
+2. Save all generated artifacts
+3. Create workflow summary
+4. Prepare final report
+
+Reply with 'complete' when finished.</prompt>
+                            <wait-for>complete</wait-for>
+                            <mode-required>code</mode-required>
+                        </step>
+                    </steps>
+                </command>
+                
+                <command name="[[status-command-name]]">
+                    <action>Display progress checklist</action>
+                    <format>Current Progress:
+✓ Completed steps: [[completed-steps]]
+⧖ Current: [[current-step]]
+☐ Remaining: [[remaining-steps]]
+
+Use [[resume-command]] to continue</format>
+                </command>
+            </command-definitions>
+        </aider-workflow>
+    </workflow>
+</metaprompt-template>
