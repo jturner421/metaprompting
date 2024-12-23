@@ -87,10 +87,13 @@ Steps-Description: [description of what each step will do, step 1 must be reques
                         <step number="[[total-steps]]">
                             <action>Save and summarize flow</action>
                             <prompt><![CDATA[
-                                Workflow complete. Saving and summarizing:
-                                1. Saving all generated artifacts
-                                2. Creating workflow summary
-                                3. Preparing final report
+                                Workflow complete. Use /save to store progress:
+                                To proceed with workflow:
+                                1. Enter command: /chat-mode code if not already in code mode
+                                2. Reply with 'ready' when you're in code mode
+                                3. Saving all generated artifacts
+                                4. Creating workflow summary
+                                5. Preparing final report
                                 
                                 Reply with 'complete' when ready to finish.
                             ]]></prompt>
