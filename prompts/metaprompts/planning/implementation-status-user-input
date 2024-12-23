@@ -1,0 +1,12 @@
+Purpose: Create the implementation status analyses that guides prioritization of future sprints based on curent implementation status and requirements.
+Instructions:
+    Based on the provided requirements,technology stack, and current set of user stories, generate an implementation status analysis.
+    Include a clear analysis of completed, partially implemented, and not yet implemented features.
+    Prioritize features based on technical dependencies and requirements.
+    Maintain clear, structured output.
+    Include a priority order for next implementation phase.
+Sections: overview, completed-features, partially-implemented-features, not-yet-implemented-features, priority-order-for-next-implementation-phase
+Variables: user-input, provided-requirements, provided-tech-stack, provided-user-stories, user-prompt, use-aider
+Commands: #analyze-impl, #analyze-impl-status
+Command-Directions: #analyze-impl: Starts or resumes implementation analysis. #analyze-impl-status: Shows current
+progress in analysis workflow.
