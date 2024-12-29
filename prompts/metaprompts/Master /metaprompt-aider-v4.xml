@@ -55,6 +55,9 @@
     Command-Directions: [list of directions for aider workflow commands]
     Steps: [number of steps in aider workflow (1-8)]
     Steps-Description: [description of what each step will do, step 1 must be request chat mode]
+    Context-Files: [list of required file patterns]
+    Context-Validation: [validation rules for context files]
+    File-Extraction: [rules for extracting data from files]
     ]]>
     </input-format>
 
@@ -226,12 +229,7 @@
                     <instruction>Generate valid a mermaid chart based on the user-prompt.</instruction>
                     <instruction>Use the diagram type specified in the user-prompt if non-specified use a flowchart.</instruction>
                     <instruction>Use the examples to understand the structure of the output.</instruction>
-                </instructions>
-                    <example>
-                        <user-chart-request>Create a flowchart that shows A flowing to E. At C, branch out to H and I.</user-chart-request>
-                        <chart-response><![CDATA[
-                            graph LR;
-                            A
+                        A
                             B
                             C
                             D
@@ -250,7 +248,12 @@
                     [[user-prompt]]
                 ]]></user-prompt>
             </output>
-        </example>
+        </example>             </instructions>
+                    <example>
+                        <user-chart-request>Create a flowchart that shows A flowing to E. At C, branch out to H and I.</user-chart-request>
+                        <chart-response><![CDATA[
+                            graph LR;
+       
     </examples>
 
     <user-prompt>

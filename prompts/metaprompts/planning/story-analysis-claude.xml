@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-cdata-sections enabled="true"?>
+
+<metaprompt-template>
+    <purpose>
+        Create a structured workflow for analyzing user stories by breaking them down into atomic, verifiable implementation steps while maintaining technology neutrality.
+    </purpose>
+
+    <instructions>
+        <instruction>Break down user stories into atomic functional implementation steps</instruction>
+        <instruction>Identify and analyze acceptance criteria for each story</instruction>
+        <instruction>Create clear verification steps for each implementation component</instruction>
+        <instruction>Maintain technology-neutral descriptions focused on user requirements</instruction>
+        <instruction>Generate structured documentation using specified templates</instruction>
+        <instruction>Save analysis in organized project structure</instruction>
+        <instruction>Enable progress tracking through status commands</instruction>
+    </instructions>
+
+    <workflow>
+        <aider-workflow>
+            <command-definitions>
+                <command name="#analyze-story">
+                    <description>Analyze and break down user story into implementation steps</description>
+                    <steps>
+                        <step number="1">
+                            <action>Request chat mode</action>
+                            <prompt>To proceed with story analysis:
+                            1. Enter command: /chat-mode ask if not already in ask mode
+                            2. Reply with 'ready' when you're in ask mode</prompt>
+                            <wait-for>ready</wait-for>
+                            <mode-required>ask</mode-required>
+                        </step>
+                        
+                        <step number="2">
+                            <action>Verify story context</action>
+                            <prompt>Checking for story [[story-id]] in project context</prompt>
+                            <wait-for>context-verified</wait-for>
+                            <mode-required>ask</mode-required>
+                        </step>
+                        
+                        <step number="3">
+                            <action>Present story details</action>
+                            <prompt>Reviewing story details and acceptance criteria</prompt>
+                            <wait-for>proceed</wait-for>
+                            <mode-required>ask</mode-required>
+                        </step>
+                        
+                        <step number="4">
+                            <action>Analyze acceptance criteria</action>
+                            <prompt>Breaking down acceptance criteria into functional requirements</prompt>
+                            <wait-for>analysis-complete</wait-for>
+                            <mode-required>ask</mode-required>
+                        </step>
+                        
+                        <step number="5">
+                            <action>Generate implementation steps</action>
+                            <prompt>Creating atomic implementation steps with verification criteria</prompt>
+                            <wait-for>approved</wait-for>
+                            <mode-required>ask</mode-required>
+                        </step>
+                        
+                        <step number="6">
+                            <action>Save and summarize flow</action>
+                            <prompt>Saving analysis results and preparing summary</prompt>
+                            <wait-for>complete</wait-for>
+                            <mode-required>code</mode-required>
+                        </step>
+                    </steps>
+                </command>
+                
+                <command name="#analysis-status">
+                    <action>Display progress checklist</action>
+                    <format>
+                        Current Progress:
+                        ✓ Completed steps: [[completed-steps]]
+                        ⧖ Current: [[current-step]]
+                        ☐ Remaining: [[remaining-steps]]
+
+                        Use #analyze-story [[story-id]] to continue
+                    </format>
+                </command>
+            </command-definitions>
+        </aider-workflow>
+    </workflow>
+
+    <sections>
+        <section name="story-details">
+            <template>
+                Story: [[story-id]] - [[story-title]]
+                Description: [[story-description]]
+                
+                Acceptance Criteria:
+                [[acceptance-criteria]]
+            </template>
+        </section>
+        
+        <section name="implementation-steps">
+            <template>
+                Step [[step-number]]. Enable [[functionality]]
+                Must Support:
+                - [[specific-capability-1]]
+                - [[specific-capability-2]]
+                Manual Verification:
+                - [[verification-step-1]]
+                - [[verification-step-2]]
+                Prerequisite: [[prerequisite]]
+                Developer Notes:
+                - [[developer-note-1]]
+                - [[developer-note-2]]
+            </template>
+        </section>
+    </sections>
+
+    <variables>
+        <variable name="story-id">Story identifier in format S&lt;X.Y&gt;</variable>
+        <variable name="story-title">Title of the user story</variable>
+        <variable name="story-description">Full description of the user story</variable>
+        <variable name="acceptance-criteria">List of acceptance criteria for the story</variable>
+        <variable name="project-context">Available context about the project and story</variable>
+        <variable name="output-directory">Custom directory path for saving analysis</variable>
+        <variable name="output-filename">Custom filename for saving analysis</variable>
+        <variable name="completed-steps">List of completed workflow steps</variable>
+        <variable name="current-step">Currently active workflow step</variable>
+        <variable name="remaining-steps">List of remaining workflow steps</variable>
+    </variables>
+
+    <examples>
+        <example>
+            <input>
+                #analyze-story S1.1
+            </input>
+            <output>
+                Story: S1.1 - User Login
+                Description: As a user, I want to log in to the system so I can access my account.
+
+                Acceptance Criteria:
+                - User can enter username and password
+                - System validates credentials
+                - User receives clear feedback on login status
+
+                Implementation Steps:
+
+                Step 1. Enable credential input
+                Must Support:
+                - Username field entry
+                - Password field entry with masking
+                Manual Verification:
+                - Open login page
+                - Verify both fields accept input
+                - Verify password field masks characters
+                Prerequisite: None
+                Developer Notes:
+                - Consider accessibility requirements
+                - Focus on user feedback during input
+            </output>
+        </example>
+        
+        <example>
+            <input>
+                #analysis-status
+            </input>
+            <output>
+                Story Analysis Progress:
+                ✓ Completed: Steps 1-3
+                ⧖ Current: Step 4 - Awaiting acceptance criteria analysis
+                ☐ Remaining: Steps 5-6
+
+                Use #analyze-story S1.1 to continue
+            </output>
+        </example>
+    </examples>
+</metaprompt-template>
