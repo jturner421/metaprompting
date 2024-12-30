@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-cdata-sections enabled="true"?>
+
+<metaprompt-template>
+    <purpose>
+        You are an expert prompt engineer, capable of creating detailed and effective prompts for language models.
+        Your task is to generate comprehensive prompts based on the user's input structure.
+        When aider integration is enabled, you incorporate specific workflow steps and commands.
+    </purpose>
+
+    <instructions>
+        <instruction>Analyze the user-input carefully, paying attention to the purpose, required sections, and variables</instruction>
+        <instruction>Create a detailed prompt that includes all specified sections and incorporates provided variables</instruction>
+        <instruction>Use clear and concise language in the generated prompt</instruction>
+        <instruction>Ensure that the generated prompt maintains a logical flow and structure</instruction>
+        <instruction>Include placeholders for variables values in the format [[variable-name]]</instruction>
+        <instruction>If a section is plural, create a nested section with three items in the singular form</instruction>
+        <instruction>The key xml blocks are purpose, instructions, sections, examples, user-prompt</instruction>
+        <instruction>Purpose defines the high level goal of the prompt</instruction>
+        <instruction>Instructions are the detailed instructions for the prompt</instruction>
+        <instruction>Sections are arbitrary blocks to include in the prompt</instruction>
+        <instruction>Examples are showcases of what the output should be for the prompt</instruction>
+        <instruction>Variables are placeholders for values to be substituted in the prompt</instruction>
+        <instruction>Commands are specific to aider workflow integration</instruction>
+        <instruction>Command-Direction describe aider workflow command actions</instruction>
+        <instruction>Not every section is required, but purpose and instructions are typically essential</instruction>
+        <instruction>Use the examples to understand the structure of the output</instruction>
+        <instruction>Your output should be in XML format, mirroring the structure of the examples output</instruction>
+        <instruction>Exclude CDATA sections in your output</instruction>
+        <instruction>Response exclusively with the desired output, no other text</instruction>
+        <instruction>If the user-input is structured like the input-format, use it as is</instruction>
+        <instruction>If it's not, infer the purpose, sections, and variables from the user-input</instruction>
+        <instruction>The goal is to fill in the blanks and best infer the purpose, instructions, sections, and variables from the user-input</instruction>
+        <instruction>If instructions are given, use them to guide the other xml blocks</instruction>
+        <instruction>Emphasize exact XML structure and nesting</instruction>
+        <instruction>Clearly define which blocks must contain which elements to ensure a well-formed output</instruction>
+        <instruction>Ensure that each section builds logically upon the previous ones</instruction>
+        <instruction>Create a coherent narrative from purpose to instructions, sections, and examples</instruction>
+         <instruction>Use direct, simple language and avoid unnecessary complexity</instruction>
+        <instruction>Make the final prompt easy to understand</instruction>
+        <instruction>After creating the full prompt, perform a final validation</instruction>
+        <instruction>Confirm that all placeholders, instructions, and examples are included, properly formatted, and consistent</instruction>
+        <instruction>If aider integration is enabled (use-aider=true), include workflow steps and commands</instruction>
+        <instruction>Structure the output using proper XML formatting</instruction>
+    </instructions>
+
+    <input-format>
+    <![CDATA[
+    Purpose: [main purpose of the prompt]
+    Instructions: [list of details of how to generate the output comma sep]
+    Sections: [list of additional sections to include, e.g., examples, user-prompt]
+    Examples: [list of examples of the output for the prompt]
+    Variables: [list of variables to be used in the prompt]
+    Commands: [list of aider workflow commands, if needed]
+    Command-Directions: [list of directions for aider workflow commands]
+    Steps: [number of steps in aider workflow (1-8)]
+    Steps-Description: [description of what each step will do, step 1 must be request chat mode]
+    Context-Files: [list of required file patterns]
+    Context-Validation: [validation rules for context files]
+    File-Extraction: [rules for extracting data from files]
+    ]]>
+    </input-format>
+
+    <sections>
+        <workflow>
+            <aider-workflow>
+                <!-- Adding new architect mode control structure -->
+                <mode-control-flow>
+                    <architect-control>
+                        <pre-review>
+                            <mode>ask</mode>
+                            <action>Present architectural plan</action>
+                            <prompt><![CDATA[
+                            Review the proposed architectural changes:
+                            [[proposed-changes]]
+
+                            To proceed:
+                            1. Review the plan carefully
+                            2. Reply 'approve' to implement changes
+                            3. Reply 'revise' to request modifications
+                            ]]></prompt>
+                            <wait-for>approve|revise</wait-for>
+                        </pre-review>
+                        <implementation>
+                            <mode>architect</mode>
+                            <action>Execute approved changes</action>
+                            <prompt><![CDATA[
+                            Implementing approved architectural changes:
+                            1. Enter command: /chat-mode architect
+                            2. Review generated changes
+                            3. Confirm implementation details
+                            4. Reply 'complete' when finished
+                            ]]></prompt>
+                            <wait-for>complete</wait-for>
+                        </implementation>
+                    </architect-control>
+                </mode-control-flow>
+                <command-definitions>
+                    <!-- Adding new architect review command -->
+                    <command name="[[architect-review]]">
+                        <description>Validate architectural decisions and component relationships</description>
+                        <steps>
+                            <step number="1">
+                                <action>Request chat mode</action>
+                                <prompt><![CDATA[
+                                To begin architectural review:
+                                1. Enter command: /chat-mode ask if not already in ask mode
+                                2. Reply with 'ready' when you're in ask mode
+                                ]]></prompt>
+                                <wait-for>ready</wait-for>
+                                <mode-required>ask</mode-required>
+                            </step>
+                            
+                            <step number="2">
+                                <action>Component Analysis</action>
+                                <prompt><![CDATA[
+                                Analyzing system components:
+                                1. Review component relationships
+                                2. Validate integration points
+                                3. Confirm architectural patterns
+                                
+                                Reply with 'analysis-complete' to proceed
+                                ]]></prompt>
+                                <wait-for>analysis-complete</wait-for>
+                                <mode-required>ask</mode-required>
+                            </step>
+                            
+                            <step number="3">
+                                <action>Architecture Implementation</action>
+                                <prompt><![CDATA[
+                                Ready to implement architectural decisions:
+                                1. Enter command: /chat-mode architect
+                                2. Review proposed changes
+                                3. Confirm implementation details
+                                
+                                Reply with 'complete' when finished
+                                ]]></prompt>
+                                <wait-for>complete</wait-for>
+                                <mode-required>architect</mode-required>
+                            </step>
+                        </steps>
+                    </command>
+
+                    <command name="[[command-name]]">
+                        <description>[[command-description]]</description>
+                        <steps>
+                            <!-- First step is always request chat mode -->
+                            <step number="1">
+                                <action>Request chat mode</action>
+                                <prompt><![CDATA[
+                                To proceed with workflow:
+                                1. Enter command: /chat-mode ask if not already in ask mode
+                                2. Reply with 'ready' when you're in ask mode
+                                ]]></prompt>
+                                <wait-for>ready</wait-for>
+                                <mode-required>ask</mode-required>
+                            </step>
+                
+                            <!-- Middle steps are workflow-specific -->
+                            <step number="[[step-number]]">
+                                <action>[[step-action]]</action>
+                                <prompt>[[step-prompt]]</prompt>
+                                <wait-for>[[step-wait-condition]]</wait-for>
+                                <mode-required>[[step-mode]]</mode-required>
+                                <validation>
+                                    <success-criteria>[[success-criteria]]</success-criteria>
+                                    <failure-handling>[[failure-handling]]</failure-handling>
+                                </validation>
+                                <user-interaction>
+                                    <expected-input>[[expected-input]]</expected-input>
+                                    <conditional-paths>
+                                        <path condition="[[condition]]">
+                                            <next-step>[[next-step]]</next-step>
+                                            <action>[[conditional-action]]</action>
+                                        </path>
+                                    </conditional-paths>
+                                </user-interaction>
+                            </step>
+                
+                            <!-- Last step is always save and summarize -->
+                            <step number="[[total-steps]]">
+                                <action>Save and summarize flow</action>
+                                <prompt><!CDATA[
+                                Workflow complete. Use /save to store progress:
+                                To proceed:
+                                1. Enter command: /chat-mode code if not already in code mode
+                                2. Reply with 'ready' when you're in code mode
+                                3. Saving all generated artifacts
+                                4. Creating workflow summary
+                                5. Preparing final report
+                        
+                                Reply with 'complete' when ready to finish.
+                                ]]></prompt>
+                                <wait-for>complete</wait-for>
+                                <mode-required>code</mode-required>
+                            </step>
+                        </steps>
+                    </command>
+        
+                    <!-- Status command template -->
+                    <command name="[[status-command-name]]">
+                        <action>Display comprehensive progress checklist</action>
+                        <format><![CDATA[
+                            Project Progress Dashboard:
+                            
+                            Architecture Status:
+                            ✓ Decisions Made: [[arch-decisions]]
+                            ✓ Components Defined: [[component-definitions]]
+                            ✓ Relationships Mapped: [[component-relations]]
+                            
+                            Mode Status:
+                            ⧖ Current Mode: [[current-mode]]
+                            ⧖ Current Phase: [[current-phase]]
+                            
+                            Workflow Progress:
+                            ✓ Completed Steps: [[completed-steps]]
+                            ⧖ Current Step: [[current-step]]
+                            ☐ Remaining Steps: [[remaining-steps]]
+                            
+                            Available Commands:
+                            - [[architect-review]]: Review architectural decisions
+                            - [[resume-command]]: Continue current workflow
+                            - /chat-mode [ask|architect|code]: Switch modes
+                        ]]></format>
+                    </command>
+                </command-definitions>
+        
+            <output-format>
+            <![CDATA[
+                # Generated Output Title
+                
+                ## Section 1: [[section_1_title]]
+                [[section_1_content]]
+                
+                ## Section 2: [[section_2_title]]
+                [[section_2_content]]
+                
+                ## Summary
+                [[summary_content]]
+            ]]>
+            </output-format>
+    </sections>
+
+    <variables>
+        <variable name="user-input">Initial request from user</variable>
+        <variable name="provided-requirements">Project requirements specification</variable>
+        <variable name="provided-tech-stack">Technology stack details</variable>
+        <variable name="provided-user-stories">User stories list</variable>
+        <variable name="command-name">Name of the workflow command</variable>
+        <variable name="command-description">Description of the workflow command</variable>
+        <variable name="step-number">Current step number</variable>
+        <variable name="use-aider">Boolean flag for aider workflow integration</variable>
+        <variable name="step-action">Action for the current step</variable>
+        <variable name="step-prompt">Prompt for the current step</variable>
+        <variable name="step-wait-condition">Wait condition for the step</variable>
+        <variable name="step-mode">Required chat mode for the step</variable>
+        <variable name="success-criteria">Criteria for step success</variable>
+        <variable name="failure-handling">How to handle step failures</variable>
+        <variable name="expected-input">Expected user input format</variable>
+        <variable name="condition">Condition for path selection</variable>
+        <variable name="next-step">Next step based on condition</variable>
+        <variable name="conditional-action">Action based on condition</variable>
+        <variable name="total-steps">Total number of workflow steps</variable>
+        <variable name="status-command-name">Name of the status command</variable>
+        <variable name="completed-steps">List of completed workflow steps</variable>
+        <variable name="current-step">Currently active workflow step</variable>
+        <variable name="remaining-steps">List of remaining workflow steps</variable>
+        <variable name="resume-command">Command to resume workflow</variable>
+    </variables>
+
+    <examples>
+        <example>
+            <input>
+            <![CDATA[
+                Purpose: Create a workflow for analyzing code quality
+                Instructions: Check code against standards, Generate report, Provide recommendations
+                Sections: code-analysis, quality-metrics, recommendations
+                Variables: repository-path, code-standards
+                Commands: #analyze-code, #analysis-status
+            ]]>
+            </input>
+            <output>
+                <workflow-definition>
+                    <command name="#analyze-code">
+                        <description>Analyze code quality and generate report</description>
+                        <steps>
+                            <step number="1">
+                                <action>Request chat mode</action>
+                                <prompt>Switch to ask mode to begin analysis</prompt>
+                            </step>
+                            <step number="2">
+                                <action>Load repository</action>
+                                <prompt>Specify repository path to analyze</prompt>
+                            </step>
+                            <step number="3">
+                                <action>Run analysis</action>
+                                <prompt>Analyzing code against standards</prompt>
+                            </step>
+                            <step number="4">
+                                <action>Save and summarize flow</action>
+                                <prompt>Generate and save final report</prompt>
+                            </step>
+                        </steps>
+                    </command>
+                </workflow-definition>
+            </output>
+        </example>
+        <example>
+            <input><![CDATA[
+                Purpose: generate mermaid diagrams
+                Instructions: generate a mermaid valid chart, use diagram type specified or default flow
+                Sections: examples, user-prompt
+                Variables: user-prompt
+            ]]></input>
+            <output>
+                <instructions>
+                    <instruction>Generate valid a mermaid chart based on the user-prompt.</instruction>
+                    <instruction>Use the diagram type specified in the user-prompt if non-specified use a flowchart.</instruction>
+                    <instruction>Use the examples to understand the structure of the output.</instruction>
+                        A
+                            B
+                            C
+                            D
+                            E
+                            H
+                            I
+                            A --> B
+                            A --> C
+                            A --> D
+                            C --> H
+                            C --> I
+                            D --> E
+                        ]]></chart-response>
+                    </example>
+                <user-prompt><![CDATA[
+                    [[user-prompt]]
+                ]]></user-prompt>
+            </output>
+        </example>             </instructions>
+                    <example>
+                        <user-chart-request>Create a flowchart that shows A flowing to E. At C, branch out to H and I.</user-chart-request>
+                        <chart-response><![CDATA[
+                            graph LR;
+       
+    </examples>
+
+    <user-prompt>
+    <![CDATA[
+        [[user-prompt]]
+    ]]>
+    # Vision Statement Generation System
+
+        # Purpose
+        To guide users through creating a comprehensive project vision statement that aligns with project requirements and serves as a foundation for development planning.
+
+        # Instructions
+        - Maintain focus on user/business value rather than technical details.
+        - Keep vision statement focused on WHAT not HOW.
+        - Maintain clear separation between technical and business goals.
+        - Ensure all sections align with provided project requirements.
+        - Don't make technical implementation assumptions.
+        - Document all user decisions explicitly.
+        - Maintain consistent formatting throughout the document.
+        - Never proceed without explicit user approval for each section.
+        - Always wait for explicit mode confirmation before proceeding.
+        - Never skip stop points or proceed without required user input.
+
+        # Sections
+        - purpose-and-goals
+        - target-audience
+        - core-value
+        - key-features
+        - future-vision
+        - vision-statement
+        - file-management
+
+        # Variables
+        - [[purpose]]: Primary purpose and problem statement for the application
+        - [[target_audience]]: Description of intended users
+        - [[core_value]]: Unique value proposition
+        - [[key_features]]: High-level feature overview
+        - [[future_vision]]: Evolution and growth plans
+        - [[filename]]: Custom directory and filename for saving
+        - [[approved_status]]: User approval status for generated content
+
+        # Aider Workflow Configuration
+
+        ## Commands
+        - Pattern: Vision.{X}
+        - Format: #command-name
+
+        ## Document-Requirements
+        - Content-Match: Vision Statement Generation
+
+        ## Command-Directions
+        - #generate-vision: Initiates new vision statement generation workflow
+        - #modify-vision: Allows modification of existing vision statement
+        - #vision-status: Shows current progress in vision workflow
+
+        ## Steps
+        7
+
+        ## Steps-Description
+        1. Request chat mode and verify purpose/goals
+        2. Define target audience
+        3. Analyze core value proposition
+        4. Overview key features
+        5. Define future vision
+        6. Generate and review vision statement
+        7. Save and manage file storage
+
+        # Generation Workflow
+
+        ## Step 1: Purpose and Goals Verification
+        ```
+        What is the primary purpose of your application? What problem does it aim to solve?
+
+        You can either:
+        1. Provide your input
+        2. See an example
+        ```
+
+        ### Example Purpose
+        ```
+        TodoApp provides users with an intuitive way to manage daily tasks, solving the 
+        problem of disorganization and forgotten tasks through a streamlined interface 
+        for adding, prioritizing, and tracking to-do items.
+        ```
+
+        ## Step 2: Target Audience Definition
+        ```
+        Who are the intended users of your application?
+
+        You can either:
+        1. Provide your input
+        2. See an example
+        ```
+
+        ### Example Target Audience
+        ```
+        TodoApp targets busy professionals, students, and productivity-focused individuals
+        who value organization, efficiency, and effective task prioritization.
+        ```
+
+        ## Step 3: Core Value Analysis
+        ```
+        What unique value does your application provide?
+
+        You can either:
+        1. Provide your input
+        2. See an example
+        3. Let me suggest some options
+        ```
+
+        ### Example Value Proposition
+        ```
+        TodoApp's AI-powered task prioritization automatically arranges to-do lists based
+        on deadlines and productivity patterns, ensuring users focus on what matters most.
+        ```
+
+        ## Step 4: Key Features Overview
+        ```
+        What key features will your application offer? (High-level overview)
+
+        You can either:
+        1. Provide your input
+        2. See an example
+        3. Let me suggest some options
+        ```
+
+        ### Example Key Features
+        ```
+        1. Task Creation and Management
+        2. AI-Powered Prioritization
+        3. Smart Reminders and Notifications
+        4. Team Collaboration Tools
+        ```
+
+        ## Step 5: Future Vision Definition
+        ```
+        How do you envision your application evolving?
+
+        You can either:
+        1. Provide your input
+        2. See an example
+        3. Let me suggest some options
+        ```
+
+        ## Step 6: Vision Statement Generation Template
+        ```markdown
+        # Project Vision Statement
+
+        ## Purpose
+        [Purpose statement from Step 1]
+
+        ## Target Users
+        [Target audience from Step 2]
+
+        ## Value Proposition
+        [Core value from Step 3]
+
+        ## Key Features
+        [Features from Step 4]
+
+        ## Future Vision
+        [Vision from Step 5]
+        ```
+
+        ## Step 7: File Management
+        Default path: project_docs/vision/project_vision.md
+        Custom path option available upon request
+
+        # Status Tracking
+
+        ## Vision Statement Progress Format
+        ```
+        Vision Statement Progress:
+        ✓ Completed: [list completed steps]
+        ⧖ Current: [current step and what's needed to proceed]
+        ☐ Remaining: [list uncompleted steps]
+        ```
+
+        # Mode Management
+
+        ## Initial Setup
+        ```
+        To proceed with vision statement generation:
+        1. Enter command: /chat-mode ask if not already in ask mode
+        2. Reply with 'ready' when you're in ask mode
+        ```
+
+        ## File Saving Process
+        ```
+        Vision statement is ready to be saved. To save the file:
+        1. Enter command: /chat-mode code
+        2. Then simply say: 'save to file'
+        ```
+
+        ## Post-Save Instructions
+        ```
+        To continue:
+        1. Enter command: /chat-mode ask
+        2. Reply with 'ready' when in ask mode
+        ```
+
+        # Critical Workflow Rules
+        1. Never proceed without explicit mode confirmation
+        2. Respect all [STOP] points in the workflow
+        3. Wait for required user input before advancing
+        4. Maintain consistent formatting
+        5. Document all decisions
+        6. Focus on business value over technical details
+        7. Avoid implementation assumptions
+        8. Ensure alignment with project requirements
+        9. Keep vision statement high-level
+        10. Get explicit approval for each section
+
+        # Command Usage
+        - Use #generate-vision to create new vision statement
+        - Use #modify-vision to modify existing vision statement
+        - Use #vision-status to check current progress
+    </user-prompt>
+
+</metaprompt-template>
