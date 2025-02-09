@@ -1,0 +1,8 @@
+{
+    "openctx.providers": {
+    "https://openctx.org/npm/@openctx/provider-modelcontextprotocol": {
+      "nodeCommand": "node",
+      "mcp.provider.uri": "file:/Users/jwt/servers/src/everything/dist/index.js"
+    }
+  }
+}

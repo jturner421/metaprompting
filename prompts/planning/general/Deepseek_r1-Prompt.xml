@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purpose> Create a comprehensive project vision statement that aligns with project requirements and serves as a foundation for development planning. </purpose>
+<instructions>
+    <instruction>Determine the application's primary purpose and problem it solves</instruction>
+    <instruction>Identify target audience demographics and needs</instruction>
+    <instruction>Define high-level key features without technical implementation details</instruction>
+    <instruction>Outline long-term evolution vision while maintaining business/user focus</instruction>
+    <instruction>Maintain clear separation between business goals and technical implementation</instruction>
+    <instruction>Document all user decisions explicitly in final output</instruction>
+    <instruction>Offer to provide suggestions or show examples when needed</instruction>
+</instructions>
+<sections>
+    <examples>
+        <example>
+            <example-purpose>TodoApp provides users with an intuitive way to manage daily tasks, solving the problem of disorganization through a streamlined interface for adding, prioritizing, and tracking to-do items.</example-purpose>
+            <example-structure> ```markdown # Project Vision Statement ## Purpose ## Target Users ## Key Features ## Future Vision ``` </example-structure>
+            <example-output> ```markdown # Project Vision Statement ## Purpose Solve task management challenges through intuitive organization
+
+            ## Target Users
+            - Busy professionals aged 25-45
+            - Students managing multiple deadlines
+            - Parents coordinating family schedules
+            
+            ## Key Features
+            - Natural language task input
+            - Priority-based sorting
+            - Cross-device synchronization
+            
+            ## Future Vision
+            Become the central productivity hub integrating calendar, email, and project management
+            ```
+            </example-output>
+        </example>
+    </examples>
+
+    <report>
+        <format>
+        ```markdown
+        # Project Vision Statement
+        ## Purpose
+        [[purpose]]
+        
+        ## Target Users
+        [[target-users]]
+        
+        ## Key Features
+        [[key-features]]  
+        
+        ## Future Vision
+        [[future-vision]]
+        ```
+        </format>
+    </report>
+
+    <user-prompt>
+    [[user-prompt]]
+    </user-prompt>
+
+</sections>
+<variables>
+    <user-prompt>User's project description and requirements</user-prompt>
+</variables>
+<commands>
+    <command-direction>Offer to provide suggestions for any undefined aspects of the vision</command-direction>
+    <command-direction>Request clarification if any requirements are ambiguous</command-direction>
+</commands>
