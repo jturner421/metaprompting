@@ -1,4 +1,4 @@
-# Metadata: # Sprint Story Generation Prompt
+# Metadata: # Post-Scaffolding Sprint Story Generation Prompt
 
 ## AI Assistant Compatibility
 - Tested With: 
