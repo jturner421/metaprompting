@@ -76,8 +76,3 @@
 - Current Version: 1.1.0
 - Last Updated: 2025-02-15
 - Stability: Beta
-- Changes:
-  * Added progress tracking
-  * Enhanced error handling
-  * Improved example clarity
-  * Added file saving capability

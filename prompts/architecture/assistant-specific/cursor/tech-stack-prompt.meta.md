@@ -68,8 +68,3 @@
 - Current Version: 2.0.0
 - Last Updated: 2025-02-15
 - Stability: Beta
-- Changes:
-  * Removed chat-mode dependencies
-  * Aligned with vision statement prompt style
-  * Added user-controlled file paths
-  * Improved workflow consistency
